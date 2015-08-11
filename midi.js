@@ -11,6 +11,10 @@ export default class MidiInterface {
     this.onReleaseNote = onReleaseNote
   }
 
+  getActiveNotes() {
+    return this.activeNotes.length
+  }
+
   startMidiRequest() {
     try {
       navigator.requestMIDIAccess()
@@ -23,26 +27,21 @@ export default class MidiInterface {
   }
 
   frequencyFromNote( note ) {
-    return 440 * Math.pow(2,(note-69)/12);
+    return 440 * Math.pow(2,(note-69)/12)
   }
 
-  getActiveNotes() {
-    return this.activeNotes.length
-  }
 
   noteOn(noteNumber) {
-    this.activeNotes.push(noteNumber);
-    this.onPressNote(noteNumber, this.frequencyFromNote(noteNumber));
-
+    this.activeNotes.push(noteNumber)
+    this.onPressNote(noteNumber, this.frequencyFromNote(noteNumber))
   }
 
   noteOff(noteNumber) {
-    let position = this.activeNotes.indexOf(noteNumber);
+    let position = this.activeNotes.indexOf(noteNumber)
     if (position != -1) {
-      this.activeNotes.splice(position, 1);
+      this.activeNotes.splice(position, 1)
     }
     this.onReleaseNote(noteNumber, this.frequencyFromNote(this.activeNotes[this.activeNotes.length-1]))
-
   }
 
   onMidiSuccess(midiAccess, midiOptions) {
@@ -50,7 +49,7 @@ export default class MidiInterface {
 
     for (let input of midiAccess.inputs.values()) {
       if (midiAccess.inputs.size === 1) {
-        this.selectedInput = input;
+        this.selectedInput = input
       }
 
       this.selectedInput.onmidimessage =  (evt) => this.onMidiInputMessage(evt)
@@ -75,7 +74,7 @@ export default class MidiInterface {
           return this.noteOn(evt.data[1])
         }
       case 0x80:
-        return this.noteOff(evt.data[1]);
+        return this.noteOff(evt.data[1])
     }
   }
 
