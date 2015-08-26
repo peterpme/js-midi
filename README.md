@@ -1,13 +1,12 @@
 # Chrome Midi Api Bridge
 
-## Installation
-`npm install -g babel` Install Babel
-
+## Prequisites
+- does use Classes, make sure you use babel or traceur
 
 ## Usage
 
 ```javascript
-import MidiInterface from './lib/midi'
+import MidiInterface from 'js-midi'
 
 let midi = new MidiInterface({
   onPressNote: (evt) => console.log(evt),

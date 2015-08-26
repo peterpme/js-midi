@@ -1,0 +1,22 @@
+{
+  "name": "js-midi",
+  "version": "0.0.1",
+  "description": "A couple of helper methods that improve your experience with the midi api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ppiekarczyk/js-midi.git"
+  },
+  "keywords": [
+    "midi"
+  ],
+  "author": "Peter Piekarczyk <peterpiekarczyk@gmail.com> (http://peterp.me)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ppiekarczyk/js-midi/issues"
+  },
+  "homepage": "https://github.com/ppiekarczyk/js-midi#readme"
+}

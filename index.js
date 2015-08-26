@@ -23,13 +23,11 @@ export default class MidiInterface {
     } catch(err) {
       console.error('StartMidiRequest ERR:', err)
     }
-
   }
 
   frequencyFromNote( note ) {
     return 440 * Math.pow(2,(note-69)/12)
   }
-
 
   noteOn(noteNumber) {
     this.activeNotes.push(noteNumber)
@@ -56,7 +54,6 @@ export default class MidiInterface {
       this.selectedInput.onstatechange = this.onMidiInputStateChange
 
     }
-
   }
 
   onMidiFail(err) {
