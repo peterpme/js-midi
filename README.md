@@ -3,6 +3,9 @@
 ## Prequisites
 - does use Classes, make sure you use babel or traceur
 
+## NPM
+`npm install js-midi`
+
 ## Usage
 
 ```javascript
