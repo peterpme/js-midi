@@ -1,7 +1,8 @@
 # Chrome Midi Api Bridge
 
 ## Prequisites
-- does use Classes, make sure you use babel or traceur
+
+- JS Midi uses `classes` and `arrow functions`. Make sure you use something like babel or traceur.
 
 ## NPM
 `npm install js-midi`
